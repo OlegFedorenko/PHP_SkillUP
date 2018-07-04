@@ -1,0 +1,17 @@
+p{
+    color: tomato;
+    text-transform: uppercase;
+}
+li{
+    color: blue;
+
+}
+p.par1{
+    color: blueviolet;
+}
+.par1{
+    font-size: 50%;
+}
+#r123{
+    font-style: italic;
+}
