@@ -7,7 +7,6 @@ foreach ($array as $arr)
     echo key($array).' - salary '.$arr.' $'.'<br>';
     next($array);
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -19,4 +18,3 @@ foreach ($array as $arr)
 <body>
 </body>
 </html>
-
