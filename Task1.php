@@ -2,7 +2,6 @@
 
 $result=0;
 $array=[1,2,3,4,5];
-
 echo 'ARRAY: ';
 
 foreach ($array as $arr)
@@ -12,7 +11,6 @@ foreach ($array as $arr)
 }
 echo '<br>'.'RESULT: ';
 echo $result;
-
 ?>
 
 <!DOCTYPE html>
