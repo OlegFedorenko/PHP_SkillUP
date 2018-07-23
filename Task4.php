@@ -9,8 +9,6 @@ foreach ($baseArray as $bArr)
     next($baseArray);
 }
 
-
-
 ?>
 
 <!DOCTYPE html>
@@ -26,10 +24,6 @@ foreach ($baseArray as $bArr)
 <?php foreach ($enArray as $bArr) {echo $bArr.' ';} ?>
 <br><br>
 <?php foreach ($ruArray as $bArr) {echo $bArr.' ';} ?>
-
-
-
-
 </body>
 </html>
 
