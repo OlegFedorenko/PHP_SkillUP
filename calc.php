@@ -7,13 +7,11 @@ $operand2 = null;
 $result = null;
 $operator = '+';
 
-
 if(isset($_REQUEST["operator"]))
 {
     $operand1=$_REQUEST["operand1"];
     $operand2=$_REQUEST["operand2"];
     $operator=$_REQUEST["operator"];
-
 
     switch ($_REQUEST["operator"])
     {
