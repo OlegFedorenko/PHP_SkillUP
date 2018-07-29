@@ -1,7 +1,7 @@
 <?php
 error_reporting();
 ini_set('display_errors', true);
-define('USER_FILENAME', __DIR__.'subscribe.txt');
+define('USER_FILENAME', __DIR__.'/subscribe.txt');
 
 $errors = [];
 
