@@ -13,6 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 function processRequest()
 {
     global $errors, $data;
+
     $fields = ['fname', 'lname', 'email', 'pword'];
 
     foreach ($fields as $field)
@@ -60,9 +61,4 @@ function getValue($field)
 {
     global $data;
     return isset($data[$field]) ? $data[$field] :'';
-}
-
-function loadUser()
-{
-
 }

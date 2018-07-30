@@ -1,5 +1,4 @@
 <?php
-//include __DIR__.'actions.php';
 define('USER_FILENAME', __DIR__.'/users.txt');
 ?>
 
@@ -14,28 +13,36 @@ define('USER_FILENAME', __DIR__.'/users.txt');
 <?php
 
 
-//$file = fopen(USER_FILENAME, "r");
+$file = file(USER_FILENAME);
 
 $out = array();
 
-foreach (file(USER_FILENAME) as $v)
+foreach ($file as $v)
 {
-    $out = explode("\t", $v);//."\n";
-    //echo $out.'<br>';
-    var_dump($out);
+    $out []= explode("\n", $v);
 }
 
-$tbl = '<table>';
-foreach ($out as $v)
-{
-    $tbl.= "<tr><td>".join("</td><td>", $v)."</td></tr>";
-}
-$tbl.= '</table>';
-echo $tbl;
+var_dump( $out);
 
-//fclose($file);
 
 ?>
+<table border="1">
+
+    <?php
+    foreach ($out as $v)
+    {
+        //$tbl.= "<tr><td>".join("</td><td>", $v)."</td></tr>";
+        $tbl .= '<tr><td>'.$v.'</td></tr>';
+    }
+    echo $tbl;
+    print $tbl;
+
+
+    ?>
+
+</table>
+
+
 
 </body>
 </html>
