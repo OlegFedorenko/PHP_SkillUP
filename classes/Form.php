@@ -1,60 +1,62 @@
 <?php
 
-require_once __DIR__.'/FormField.php';
+//require __DIR__.'/SmartForm.php';
 
 class Form
 {
-    private $method;
-    private $fields;
 
-    public function __construct($method = 'get')
+    public function input($label,$array)
     {
-        $this->fields = [];
-        $this->method = $method;
+        $out = sprintf('<input %s>', $this->arrayToString ($array));
+        $ret = sprintf('<label>%s %s</label>', $label, $out);
+        return $ret;
     }
 
-    public function addField(FormField $field)
+    public function password($label,$array)
     {
-        $this->fields[$field->getName()] = $field;
+        $out = sprintf('<input %s>', $this->arrayToString ($array));
+        $ret = sprintf('<label>%s %s</label>', $label, $out);
+        return $ret;
     }
 
-    public function renderBegin()
+    public function textarea($label,$array)
     {
-        return sprintf('<form method="%s">', $this->method);
+        $out = sprintf('<textarea %s></textarea>', $this->arrayToString ($array));
+        $ret = sprintf('<label>%s %s</label><br>', $label, $out);
+        return $ret;
     }
 
-    public function renderEnd()
+    public function submit($label,$array)
+    {
+        $out = sprintf('<input %s>', $this->arrayToString ($array));
+        $ret = sprintf('<label>%s %s</label>', $label, $out);
+        return $ret;
+    }
+
+    public function open($array)
+    {
+        $out = sprintf('<form %s>', $this->arrayToString ($array));
+        return $out;
+    }
+
+
+    public function close()
     {
         return '</form>';
     }
 
-    public function  renderFields()
+    protected function arrayToString ($array)
     {
-        $ret = '';
+        $line = '';
+        $glue1 = '=';
+        $glue2 = ' ';
 
-        foreach ($this->fields as $field)
+        foreach ($array as $key=>$value)
         {
-            $ret .=$field->render();
+            $line.=$key.$glue1.'"'.$value.'"'.$glue2;
         }
-
-        return $ret;
+        //echo $line;
+        return $line;
     }
 
-    public function processRequest()
-    {
-        $request = $this->method == 'get'? $_GET : $_POST;
-        $isValid = true;
-
-        foreach ($this->fields as $field)
-        {
-            $fieldIsValid = $field->processRequest($request);
-
-            if (!$fieldIsValid)
-            {
-                $isValid = false;
-            }
-        }
-
-        return $isValid;
-    }
 }

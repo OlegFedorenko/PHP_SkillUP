@@ -1,5 +1,9 @@
 <?php
-include __DIR__.'/actions.php';
+error_reporting();
+ini_set('display_errors', true);
+
+require __DIR__.'/classes/Form.php';
+//require __DIR__.'/classes/SmartForm.php';
 ?>
 
 <!DOCTYPE html>
@@ -7,18 +11,28 @@ include __DIR__.'/actions.php';
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles.css">
-    <title>Registration</title>
+    <title>HW try 5</title>
 </head>
 <body>
-    <h2>Registration</h2>
+<h1> F O R M </h1>
+<?php
+    $form = new Form();
 
-    <?= $form->renderBegin() ?>
+    //$smart = new SmartForm();
 
-        <?= $form->renderFields() ?>
+    echo $form->open(['action'=>'index.php', 'method'=>'post']);
 
-        <button type="submit" name="confirm" value="">Sign Up</button>
+    echo $form->input('Name', ['type'=>'text', 'name'=>'name', 'value'=>'']);
 
-    <?= $form->renderEnd() ?>
-</form>
+    //echo $smart->input('Name', ['type'=>'text', 'name'=>'name', 'value'=>'']);
+
+    echo $form->password('Password', ['type'=>'password', 'name'=>'pword', 'value'=>'']);
+
+    echo $form->textarea('Comment', ['name'=>'comment', 'cols'=>'20', 'rows'=>'3', 'value'=> '']);
+
+    echo $form->submit('', ['type'=>'submit', 'name'=>'sub', 'value'=>'Send form']);
+
+    $form->close();
+?>
 </body>
 </html>

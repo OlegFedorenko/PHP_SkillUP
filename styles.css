@@ -13,10 +13,13 @@ label input
     top: 0;
     border: 1px solid grey;
 }
-label p.error
+
+label textarea
 {
-    margin: -1.6em 0 0 100px;
-    color: red;
-    font-size: 8px;
-    font-family: Chandas;
+    display: block;
+    position: absolute;
+    left: 100px;
+    top: 0;
+    bottom: 0;
+    border: 1px solid grey;
 }
