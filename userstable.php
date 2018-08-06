@@ -19,30 +19,24 @@ $out = array();
 
 foreach ($file as $v)
 {
-    $out []= explode("\n", $v);
-}
 
-var_dump( $out);
+    $out[]= explode("\t", $v);
+}
 
 
 ?>
 <table border="1">
 
-    <?php
-    foreach ($out as $v)
-    {
-        //$tbl.= "<tr><td>".join("</td><td>", $v)."</td></tr>";
-        $tbl .= '<tr><td>'.$v.'</td></tr>';
-    }
-    echo $tbl;
-    print $tbl;
+    <?php foreach ($out as $user) { ?>
+        <tr>
+            <?php foreach ($user as $field) { ?>
+                <td><?= $field ?></td>
+            <?php } ?>
+        </tr>
+    <?php } ?>
 
-
-    ?>
 
 </table>
-
-
 
 </body>
 </html>
