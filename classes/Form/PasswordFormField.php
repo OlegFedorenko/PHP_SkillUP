@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__.'/FormField.php';
+namespace Form;
 
 class PasswordFormField extends FormField
 {

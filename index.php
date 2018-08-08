@@ -1,5 +1,5 @@
 <?php
-include __DIR__.'/actions.php';
+require_once __DIR__.'/actions.php';
 ?>
 
 <!DOCTYPE html>

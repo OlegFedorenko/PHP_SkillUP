@@ -1,5 +1,7 @@
 <?php
 
+namespace Form;
+
 class FormField
 {
     private $label;
@@ -52,4 +54,14 @@ class FormField
 
         return true;
     }
+
+    /**
+     * @return string
+     */
+    public function getValue(): string //геттер для значений полей формы
+    {
+        return $this->value;
+    }
+
+
 }

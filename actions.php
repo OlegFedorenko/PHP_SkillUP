@@ -1,12 +1,12 @@
 <?php
 
-require_once __DIR__.'/classes/Form.php'; //единоразовое подключение класса
-require_once __DIR__.'/classes/EmailFormField.php';
-require_once __DIR__.'/classes/PasswordFormField.php';
+use Form\Form;
+use Form\FormField;
+use Form\EmailFormField;
+use Form\PasswordFormField;
+use Entity\User;
 
-error_reporting();
-ini_set('display_errors', true);
-define('USER_FILENAME', __DIR__.'/users.txt');
+require_once __DIR__.'/init.php';
 
 $errors = [];
 $data = [];
@@ -30,17 +30,17 @@ function processRequest()
 
     if ($isValid)
     {
-        //saveUser();
+        $values = $form->getValues();
+        $user = User::createFromArray($values); // вызов статического метода класса User
+        saveUser($user);
         header('Location: success.html');
         exit();
     }
 }
 
-function saveUser()
+function saveUser(User $user) //передаем объект клаасса User
 {
-    global $data;
-
     $file = fopen(USER_FILENAME, 'a');
-    fputs($file, implode("\t", $data)."\n");
+    fputs($file, serialize($user)."\n");
     fclose($file);
 }

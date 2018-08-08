@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__.'/FormField.php';
+namespace Form;
 
 class EmailFormField extends FormField
 {
@@ -27,5 +27,4 @@ class EmailFormField extends FormField
 
         return $isValid;
     }
-
 }
