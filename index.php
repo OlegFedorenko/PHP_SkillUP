@@ -2,8 +2,8 @@
 error_reporting();
 ini_set('display_errors', true);
 
-require __DIR__.'/classes/Form.php';
-//require __DIR__.'/classes/SmartForm.php';
+require_once __DIR__.'/classes/Form.php';
+require_once __DIR__.'/classes/SmartForm.php';
 ?>
 
 <!DOCTYPE html>
@@ -18,13 +18,13 @@ require __DIR__.'/classes/Form.php';
 <?php
     $form = new Form();
 
-    //$smart = new SmartForm();
+    $smart = new SmartForm();
 
     echo $form->open(['action'=>'index.php', 'method'=>'post']);
 
-    echo $form->input('Name', ['type'=>'text', 'name'=>'name', 'value'=>'']);
+    echo $form->input('Name old', ['type'=>'text', 'name'=>'name', 'value'=>'']);
 
-    //echo $smart->input('Name', ['type'=>'text', 'name'=>'name', 'value'=>'']);
+    echo $smart->input2('Name smart', ['type'=>'text', 'name'=>'name', 'value'=>'']);
 
     echo $form->password('Password', ['type'=>'password', 'name'=>'pword', 'value'=>'']);
 

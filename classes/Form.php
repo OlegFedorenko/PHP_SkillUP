@@ -1,6 +1,6 @@
 <?php
 
-//require __DIR__.'/SmartForm.php';
+require_once __DIR__.'/SmartForm.php';
 
 class Form
 {
@@ -55,7 +55,6 @@ class Form
         {
             $line.=$key.$glue1.'"'.$value.'"'.$glue2;
         }
-        //echo $line;
         return $line;
     }
 
