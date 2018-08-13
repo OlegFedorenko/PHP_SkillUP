@@ -1,15 +1,17 @@
 <?php
 
-//setcookie('test', 'value', strtotime('+3 days'),'/')
+session_save_path(__DIR__);
+
+session_start();
 
 if (isset($_GET['action'])) {
     switch ($_GET['action']) {
         case 'add':
-            setcookie($_GET['name'], $_GET['value'], strtotime('+10 sec'), '/');
+            $_SESSION[$_GET['name']] = $_GET['value'];
             break;
 
         case 'delete':
-            setcookie($_GET['name'], null, strtotime('-1 sec'), '/');
+            unset($_SESSION[$_GET['name']]);
             break;
     }
 
@@ -25,14 +27,14 @@ if (isset($_GET['action'])) {
     <title>Title</title>
 </head>
 <body>
-    <h1>Coockie values</h1>
+    <h1>Sessions values</h1>
     <table border="1">
         <tr>
             <th>Name</th>
             <th>Value</th>
             <th>Delete?</th>
         </tr>
-        <?php foreach ($_COOKIE as $name => $value)
+        <?php foreach ($_SESSION as $name => $value)
         { ?>
         <tr>
             <td><?=$name?></td>
