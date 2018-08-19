@@ -1,27 +1,26 @@
 <?php
-
-if (isset($_COOKIE['ing_count']))
+if (isset($_COOKIE['counter']))
 {
-    $_COOKIE['ing_count'] = 0;
+    $counter = $_COOKIE['counter'];
 }
-$_COOKIE['ing_count']++;
-setcookie('ind_count',$_COOKIE['ing_count'], time()+60*60*24);
-
-echo '<br>'.'*** Task 6 ***'.'<br><br>';
-
-echo "Visits - ".$_COOKIE['ing_count'];
+else
+{
+    $counter = 0;
+}
+$counter++;
+setcookie("counter",$counter, time()+7*24*60*60);
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Hometask Cookies 2</title>
-
-
 </head>
 <body>
-
+<?='<br>'.'*** Task 6 ***'.'<br><br>';?>
+<?= 'You have visited this page '.$counter.' times' ?>
 </body>
 </html>
 

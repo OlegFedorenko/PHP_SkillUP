@@ -28,8 +28,13 @@ setcookie('age7', mt_rand(10,70), mktime(23,59,59,12,31));
     <a>setcookie('age7', mt_rand(10,70), mktime(23,59,59,12,31)); // till the end of current year </a><br>
 
     <?='<br>'.'*** Task 6 ***'.'<br><br>';?>
-    <form action="Cookies2.php" method="get">
-        <h3>Push the button!</h3>
+    <form action="Cookies2.php" method="get" target="_blank">
+        <strong>Push the button!</strong><br>
+        <input type="submit"><br>
+
+    <?='<br>'.'*** Task 7 ***'.'<br><br>';?>
+    <form action="Cookies3.php" method="get" target="_blank">
+        <strong>Push the button!</strong><br>
         <input type="submit">
     </form>
 </body>
