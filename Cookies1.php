@@ -31,6 +31,7 @@ setcookie('age7', mt_rand(10,70), mktime(23,59,59,12,31));
     <form action="Cookies2.php" method="get" target="_blank">
         <strong>Push the button!</strong><br>
         <input type="submit"><br>
+    </form>
 
     <?='<br>'.'*** Task 7 ***'.'<br><br>';?>
     <form action="Cookies3.php" method="get" target="_blank">

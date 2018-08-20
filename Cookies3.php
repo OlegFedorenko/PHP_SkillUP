@@ -1,19 +1,25 @@
 <?php
 
-setcookie("isHide",$isHide);
+
 
 if (isset($_REQUEST['action']))
 {
-    $_COOKIE['isHide'] = 1;
+    setcookie("isHide",1, time()+60*60*24*31);
+    header('location:Cookies3.php');
+    exit();
 }
 
 if ($_COOKIE['isHide'] == 0)
 {
     echo '<img src="banner.png">';
+    echo'<form method="get" action="Cookies3.php">';
+    echo'<input type="hidden" name="action" value="1">';
+    echo'<input type="submit" value="Hide" >';
+    echo'</form>';
 }
 else
 {
-    echo 'Banner hss been hidden';
+    echo '<h3>Banner has been hidden</h3>';
 }
 ?>
 
@@ -24,8 +30,6 @@ else
     <title>Hometask Cookies 2</title>
 </head>
 <body>
-<form method="get" action="Cookies3.php">
-    <input type="submit" value="Hide" >
-</form>
+
 </body>
 </html>
