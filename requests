@@ -1,0 +1,156 @@
+/*0*/
+SELECT * from workers;
+
+/*1*/
+SELECT name from workers
+WHERE id=3;
+
+/*2*/
+SELECT name from workers
+WHERE salary=1000;
+
+/*3*/
+SELECT name from workers
+WHERE age=23;
+
+/*4*/
+SELECT name from workers
+WHERE salary>400;
+
+/*5*/
+SELECT name from workers
+WHERE salary>=500;
+
+/*6*/
+SELECT name from workers
+WHERE salary!=500;
+
+/*7*/
+SELECT name from workers
+WHERE salary<=900;
+
+/*8*/
+SELECT salary, age from workers
+WHERE name = 'piter';
+
+
+/*9*/
+SELECT name from workers
+WHERE age>25 and age<=28;
+
+/*10*/
+SELECT * from workers
+WHERE name = 'alice';
+
+/*11*/
+SELECT * from workers
+WHERE name = 'alice' or name = 'piter';
+
+/*12*/
+SELECT * from workers
+WHERE name != 'piter';
+
+/*13*/
+SELECT * from workers
+WHERE age = 27 or salary = 1000;
+
+/*14*/
+SELECT * from workers
+WHERE (age >= 23 and age < 27) or salary = 1000;
+
+/*15*/
+SELECT * from workers
+WHERE (age >= 23 and age < 27) or (salary > 400 and salary<1000);
+
+/*16*/
+SELECT * from workers
+WHERE age = 27 and salary > 400;
+
+/*17*/
+INSERT into workers
+SET name='Nick', age=26, salary=300;
+
+/*18*/
+INSERT into workers (name, age, salary)
+VALUES ('Zelda', 20, 1200);
+
+/*19*/
+INSERT into workers (name, age, salary)
+VALUES ('Gorlum', 30, 1200), ('Bender', 31, 1000);
+
+/*20*/
+DELETE from workers
+WHERE id=7;
+
+/*21*/
+DELETE from workers
+WHERE name='lisa';
+
+/*22*/
+DELETE from workers
+WHERE age=23;
+
+/*23*/
+UPDATE workers SET salary=200
+WHERE name='piter';
+
+/*24*/
+UPDATE workers SET age=35
+WHERE id='4';
+
+/*25*/
+UPDATE workers SET salary=700
+WHERE salary=200;
+
+/*26*/
+UPDATE workers SET age=23
+WHERE id>2 and id<=5;
+
+/*27*/
+UPDATE workers SET name='Geralt' , salary=900
+WHERE name='nick';
+
+/*------------------------------------------------------*/
+
+/*1*/
+SELECT * from workers
+WHERE id>0 limit 0,6;
+
+/*2*/
+SELECT * from workers
+WHERE id>0 limit 2,3;
+
+/*3*/
+SELECT * from workers
+WHERE id>0 order by salary;
+
+/*4*/
+SELECT * from workers
+WHERE id>0 order by salary desc;
+
+/*5*/
+SELECT * from workers
+WHERE id>0 order by age limit 1,5;
+
+/*6*/
+SELECT COUNT(*) as count from workers;
+
+/*7*/
+SELECT COUNT(*) as count from workers
+WHERE salary=500;
+
+/*8*/
+SELECT * from pages
+WHERE autor like '%ов';
+
+/*9*/
+SELECT * from pages
+WHERE article like '%элемент%';
+
+/*10*/
+SELECT * from workers
+WHERE age like '3_';
+
+/*11*/
+SELECT * from workers
+WHERE name like '%y';
