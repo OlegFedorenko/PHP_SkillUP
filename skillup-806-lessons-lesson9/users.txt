@@ -1,4 +1,0 @@
-Глеб	Синьковский	gleb.sinkovskiy@gmail.com	test
-Test	Tester	test@test.com	newpass
-
-
