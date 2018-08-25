@@ -1,2 +1,0 @@
-Jim	Bond	jd@mail.com	12345678
-w	qw	jd@mail.com	12345678
