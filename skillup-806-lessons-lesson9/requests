@@ -15,7 +15,6 @@ select u.id, u.first_name, u.last_name, u.email, d.name department_name
 from users u
 cross join departments d;
 
-
 select d.id, d.name, u.email
 from departments d left join users u on d.id = u.department_id
 order by d.name;
@@ -23,4 +22,9 @@ order by d.name;
 select d.name, count(u.id) users
 from departments d left join users u on d.id = u.department_id
 group by d.name
-order by d.name
+order by d.name;
+
+select d.name, group_concat(u.last_name separator ', ') users
+from departments d left join users u on d.id = u.department_id
+group by d.name
+order by d.name;
